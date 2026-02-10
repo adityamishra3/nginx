@@ -96,6 +96,11 @@ dist
 .temp
 .cache
 
+# SSL certs
+certs/
+letsencrypt/
+*.pem
+
 # Sveltekit cache directory
 .svelte-kit/
 
