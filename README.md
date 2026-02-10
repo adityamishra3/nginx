@@ -15,7 +15,7 @@ To get this running on your local machine, follow these steps.
 1.  **Clone this repository:**
     ```bash
     git clone https://github.com/adityamishra3/nginx.git
-    cd your-repo-name
+    cd nginx
     ```
 
 2.  **Generate SSL Certificates:**
