@@ -1,20 +1,34 @@
-version: '3.8'
-
 services:
   app1:
-    build:
-      dockerfile: .
+    build: .
     environment:
       - SERVER=app1
       - PORT=3000
     ports:
       - "3000:3000"
+  
+  app2:
+    build: .
+    environment:
+      - SERVER=app2
+      - PORT=3000
+    ports:
+      - "3001:3000"
+  
+  app3:
+    build:
+      dockerfile: Dockerfile # different way
+    environment:
+      - SERVER=app3
+      - PORT=3000
+    ports:
+      - "3002:3000"
     
   nginx:
     image: nginx:latest
     ports:
       - "8080:80"
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro # so that nginx can read our custom config and doesn't show its stupid default page.
     depends_on:
       - app1
